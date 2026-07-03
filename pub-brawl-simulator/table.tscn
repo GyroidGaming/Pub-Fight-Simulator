@@ -1,0 +1,17 @@
+[gd_scene load_steps=3 format=3 uid="uid://c1k1sli1hs2ac"]
+
+[ext_resource type="ArrayMesh" uid="uid://beva8k4uo0e2x" path="res://uploads_files_2452425_medieval_table.obj" id="1_jd0nb"]
+
+[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_jd0nb"]
+points = PackedVector3Array(1.05019, 0.00432531, 0.6664, -1.26944, 0.734449, -0.762941, -1.17297, 0.8204, -0.70564, 1.26924, 0.734449, -0.762941, 1.17277, 0.8204, 0.687694, -1.26944, 0.734449, 0.744995, -1.06038, 0.0004, -0.652868, 1.06018, 0.0004, -0.652868, -1.05029, 0.00436348, 0.666337, -1.17297, 0.8204, 0.687694, 1.17277, 0.8204, -0.70564, 1.26924, 0.734449, 0.744995)
+
+[node name="Table" type="Node3D"]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0, 0, 0)
+
+[node name="RigidBody3D" type="RigidBody3D" parent="."]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="RigidBody3D"]
+mesh = ExtResource("1_jd0nb")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="RigidBody3D"]
+shape = SubResource("ConvexPolygonShape3D_jd0nb")

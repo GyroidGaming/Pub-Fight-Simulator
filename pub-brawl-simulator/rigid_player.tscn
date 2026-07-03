@@ -1,0 +1,22 @@
+[gd_scene load_steps=4 format=3 uid="uid://dw0u2iu8ewfq8"]
+
+[ext_resource type="Script" uid="uid://djn2o1npxd1cc" path="res://rigid_player.gd" id="1_68lw8"]
+[ext_resource type="ArrayMesh" uid="uid://c14rl7m3urbcj" path="res://uploads_files_4066956_Stickman.obj" id="2_lf7h2"]
+
+[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_mcwaj"]
+points = PackedVector3Array(-0.029552, 0.595687, -0.352685, 0.0960706, 0.733895, -0.0135941, -0.0923818, 0.733895, 0.0240668, 0.0458031, 0.00531128, -0.0638087, -0.0421143, 0.00531128, 0.0617278, 0.0332409, 0.545473, -0.352685, 0.0458031, 0.0179043, 0.0742815, -0.0421143, 0.0179043, -0.0763624, 0.0198978, 0.780115, 0.0350593, -0.029552, 0.557987, 0.363229, 0.0332409, 0.545473, 0.350604, -0.0923818, 0.683602, -0.0261478, -0.0161845, 0.779592, -0.0370912, 0.0960706, 0.671009, 0.0115132, 0.0332409, 0.595687, -0.340203, -0.0169897, 0.545473, -0.36531, 0.0332409, 0.595687, 0.350604, -0.029552, 0.595687, 0.350604, -0.0923818, 0.671009, 0.0240668, 0.0206786, 0.0179043, -0.0888447, -0.029552, 0.0179043, 0.0867638, 0.0960706, 0.671009, -0.0135941, 0.0206786, 0.545473, 0.363229, 0.0198588, 0.779282, -0.0370621, -0.029552, 0.545473, -0.352685, -0.0923818, 0.733895, -0.0261478, -0.0279775, 0.776621, 0.0347319, 0.0960706, 0.733895, 0.0115132, 0.0206786, 0.545473, -0.36531, -0.0421143, 0.0179043, 0.0742815, -0.0421143, 0.00531128, -0.0638087, 0.0458031, 0.00531128, 0.0617278)
+
+[node name="RigidPlayer" type="RigidBody3D"]
+script = ExtResource("1_68lw8")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 0, 0, 0)
+mesh = ExtResource("2_lf7h2")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+shape = SubResource("ConvexPolygonShape3D_mcwaj")
+
+[node name="Neck" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.691645, 0)
+
+[node name="Camera3D" type="Camera3D" parent="Neck"]
