@@ -1,0 +1,36 @@
+[gd_scene load_steps=6 format=3 uid="uid://berqnce3p6nom"]
+
+[ext_resource type="PackedScene" uid="uid://br1jtqdmtgwsy" path="res://new_table_mesh.tscn" id="1_wrp3w"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_csxbv"]
+size = Vector3(1.19617, 0.131348, 1.98904)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_qa0pr"]
+size = Vector3(0.678711, 0.833161, 0.0831337)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_3otgr"]
+size = Vector3(0.678711, 0.825958, 0.0970459)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_cundk"]
+size = Vector3(0.0717926, 0.10939, 1.55173)
+
+[node name="table_animateable_body" type="AnimatableBody3D"]
+collision_layer = 3
+
+[node name="table_low" parent="." instance=ExtResource("1_wrp3w")]
+
+[node name="Table Top Collision" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.00482178, 0.861958, -0.0080719)
+shape = SubResource("BoxShape3D_csxbv")
+
+[node name="Left Leg Collision" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.00022015, 0.397794, 0.708357)
+shape = SubResource("BoxShape3D_qa0pr")
+
+[node name="Right Leg Collision" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.00830078, 0.409958, -0.712864)
+shape = SubResource("BoxShape3D_3otgr")
+
+[node name="Support Bar Collision" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.000694275, 0.417001, -0.000534058)
+shape = SubResource("BoxShape3D_cundk")

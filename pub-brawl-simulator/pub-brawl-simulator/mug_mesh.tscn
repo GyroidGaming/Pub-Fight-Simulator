@@ -1,0 +1,53 @@
+[gd_scene load_steps=10 format=3 uid="uid://iw08ppudywqm"]
+
+[ext_resource type="PackedScene" uid="uid://f7g8pj6n546f" path="res://objects/mug_low.fbx" id="1_iae1n"]
+[ext_resource type="Texture2D" uid="uid://bk4ni3jtych0j" path="res://textures/mug/mug_low_DefaultMaterial_BaseColor.png" id="2_q1wmn"]
+[ext_resource type="Texture2D" uid="uid://dcxihvjx85lei" path="res://textures/mug/mug_low_DefaultMaterial_Metallic.png" id="3_5yajl"]
+[ext_resource type="Texture2D" uid="uid://cpmrb4ssvh4sv" path="res://textures/mug/mug_low_DefaultMaterial_Normal.png" id="4_ukodm"]
+[ext_resource type="Texture2D" uid="uid://0fy0kfwoddn4" path="res://textures/mug/mug_low_DefaultMaterial_Roughness.png" id="5_rbfcg"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_6co5w"]
+albedo_texture = ExtResource("2_q1wmn")
+metallic = 1.0
+metallic_texture = ExtResource("3_5yajl")
+roughness_texture = ExtResource("5_rbfcg")
+normal_enabled = true
+normal_texture = ExtResource("4_ukodm")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_uo005"]
+albedo_texture = ExtResource("2_q1wmn")
+metallic = 1.0
+metallic_texture = ExtResource("3_5yajl")
+roughness_texture = ExtResource("5_rbfcg")
+normal_enabled = true
+normal_texture = ExtResource("4_ukodm")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_wpayv"]
+albedo_texture = ExtResource("2_q1wmn")
+metallic = 1.0
+metallic_texture = ExtResource("3_5yajl")
+roughness_texture = ExtResource("5_rbfcg")
+normal_enabled = true
+normal_texture = ExtResource("4_ukodm")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_e3mo3"]
+albedo_texture = ExtResource("2_q1wmn")
+metallic = 1.0
+metallic_texture = ExtResource("3_5yajl")
+roughness_texture = ExtResource("5_rbfcg")
+normal_enabled = true
+normal_texture = ExtResource("4_ukodm")
+
+[node name="mug_mesh" instance=ExtResource("1_iae1n")]
+
+[node name="wood_low" parent="." index="0"]
+surface_material_override/0 = SubResource("StandardMaterial3D_6co5w")
+
+[node name="ring_low" parent="." index="1"]
+surface_material_override/0 = SubResource("StandardMaterial3D_uo005")
+
+[node name="cup_low" parent="." index="2"]
+surface_material_override/0 = SubResource("StandardMaterial3D_wpayv")
+
+[node name="handle_low" parent="." index="3"]
+surface_material_override/0 = SubResource("StandardMaterial3D_e3mo3")

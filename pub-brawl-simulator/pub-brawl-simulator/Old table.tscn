@@ -1,0 +1,52 @@
+[gd_scene load_steps=8 format=3 uid="uid://c1k1sli1hs2ac"]
+
+[ext_resource type="ArrayMesh" uid="uid://beva8k4uo0e2x" path="res://objects/uploads_files_2452425_medieval_table.obj" id="1_x6wqe"]
+[ext_resource type="Texture2D" uid="uid://cinw1f1v16h1q" path="res://textures/table/wood_table_worn_diff_4k.png" id="2_ig0b6"]
+[ext_resource type="Texture2D" uid="uid://cfhcfeoysfrt6" path="res://textures/table/wood_table_worn_nor_gl_4k.png" id="3_y8pie"]
+[ext_resource type="Texture2D" uid="uid://bf2d5oygps2d8" path="res://textures/table/wood_table_worn_rough_4k.png" id="4_mk4ai"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_jd0nb"]
+albedo_color = Color(0.703808, 0.703808, 0.703808, 1)
+albedo_texture = ExtResource("2_ig0b6")
+roughness_texture = ExtResource("4_mk4ai")
+normal_enabled = true
+normal_texture = ExtResource("3_y8pie")
+ao_enabled = true
+ao_texture = ExtResource("2_ig0b6")
+uv1_scale = Vector3(2, 2, 2)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_vjl2i"]
+size = Vector3(2.50182, 0.225464, 1.48157)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_67vji"]
+size = Vector3(0.125549, 0.763672, 0.116943)
+
+[node name="Table" type="Node3D"]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0, 0, 0)
+
+[node name="RigidBody3D" type="RigidBody3D" parent="."]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="RigidBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.00858247, 0)
+mesh = ExtResource("1_x6wqe")
+surface_material_override/0 = SubResource("StandardMaterial3D_jd0nb")
+
+[node name="CollisionTable" type="CollisionShape3D" parent="RigidBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.00175095, 0.75557, -0.00396729)
+shape = SubResource("BoxShape3D_vjl2i")
+
+[node name="Collision Leg 1" type="CollisionShape3D" parent="RigidBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.0447, 0.387644, -0.618142)
+shape = SubResource("BoxShape3D_67vji")
+
+[node name="Collision Leg 2" type="CollisionShape3D" parent="RigidBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.038, 0.387644, -0.618142)
+shape = SubResource("BoxShape3D_67vji")
+
+[node name="Collision Leg 3" type="CollisionShape3D" parent="RigidBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.05182, 0.387644, 0.616519)
+shape = SubResource("BoxShape3D_67vji")
+
+[node name="Collision Leg 4" type="CollisionShape3D" parent="RigidBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.0447, 0.387644, 0.617828)
+shape = SubResource("BoxShape3D_67vji")
